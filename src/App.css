@@ -1,0 +1,125 @@
+#geeks {
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 1500px;
+  min-height: 1000px;
+}
+
+#centre {
+  height: 50%;
+  width: 40%;
+  background-color: whitesmoke;
+  border-color: #282c34;
+  border-style: groove;
+  border-radius: 25px;
+  padding: 10px;
+  position: relative;
+  max-width: 900px;
+  max-height: 500px;
+}
+
+form {
+  width: 100%;
+  height: 30%;
+}
+
+#formcontainer {
+  width: 100%;
+  height: 30%;
+}
+
+#leftbox {
+  float: left;
+  width: 33%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#middlebox {
+  float: left;
+  width: 33%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#rightbox {
+  float: right;
+  width: 34%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+label {
+  font-size: large;
+  font-weight: bold;
+  padding: 20px;
+}
+
+input, select {
+  margin: 20px;
+}
+
+select {
+  width:40%;
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+  border-radius: 5px;
+}
+
+.button {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+  padding: 10px 20px;
+  margin: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+#number {
+  width:40%;
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+  border-radius: 5px;
+}
+
+#checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #008CBA;
+}
+
+.title {
+  padding: 20px;
+  font-size: 40px;
+}
+
+#analysis {
+ padding: 0px 20px;
+ font-size: 20px;
+ font-weight: bold;
+}
+
+p {
+  padding: 0px 20px;
+  font-size: 20px;
+}
