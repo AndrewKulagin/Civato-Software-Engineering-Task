@@ -73,8 +73,8 @@ function App() {
 
 
   return (
-    <div className="jumbotron vertical-center back-gray" >
-      <div className="container-sm w-50 bg-light p-5 rounded">
+    <div className="vertical-center back-gray mb-0" >
+      <div className="container-sm min-vw-50 bg-light p-5 rounded ">
         <form>
           <legend>Property facts</legend>
           <div className="row">
