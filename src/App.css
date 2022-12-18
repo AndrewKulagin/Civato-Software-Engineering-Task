@@ -1,125 +1,51 @@
-#geeks {
-  height: 100vh;
-  width: 100vw;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 1500px;
-  min-height: 1000px;
+.jumbotron.vertical-center {
+  margin-bottom: 0; /* Remove the default bottom margin of .jumbotron */
 }
 
-#centre {
-  height: 50%;
-  width: 40%;
-  background-color: whitesmoke;
-  border-color: #282c34;
-  border-style: groove;
-  border-radius: 25px;
-  padding: 10px;
-  position: relative;
-  max-width: 900px;
-  max-height: 500px;
-}
+.vertical-center {
+  min-height: 100%;  /* Fallback for vh unit */
+  min-height: 100vh; /* You might also want to use
+                        'height' property instead.
+                        
+                        Note that for percentage values of
+                        'height' or 'min-height' properties,
+                        the 'height' of the parent element
+                        should be specified explicitly.
+  
+                        In this case the parent of '.vertical-center'
+                        is the <body> element */
 
-form {
+  /* Make it a flex container */
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex; 
+  
+  /* Align the bootstrap's container vertically */
+    -webkit-box-align : center;
+  -webkit-align-items : center;
+       -moz-box-align : center;
+       -ms-flex-align : center;
+          align-items : center;
+  
+  /* In legacy web browsers such as Firefox 9
+     we need to specify the width of the flex container */
   width: 100%;
-  height: 30%;
+  min-width: 600px;
+  
+  /* Also 'margin: 0 auto' doesn't have any effect on flex items in such web browsers
+     hence the bootstrap's container won't be aligned to the center anymore.
+  
+     Therefore, we should use the following declarations to get it centered again */
+         -webkit-box-pack : center;
+            -moz-box-pack : center;
+            -ms-flex-pack : center;
+  -webkit-justify-content : center;
+          justify-content : center;
 }
 
-#formcontainer {
-  width: 100%;
-  height: 30%;
-}
-
-#leftbox {
-  float: left;
-  width: 33%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-#middlebox {
-  float: left;
-  width: 33%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-#rightbox {
-  float: right;
-  width: 34%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-label {
-  font-size: large;
-  font-weight: bold;
-  padding: 20px;
-}
-
-input, select {
-  margin: 20px;
-}
-
-select {
-  width:40%;
-  background-color: white; 
-  color: black; 
-  border: 2px solid #008CBA;
-  border-radius: 5px;
-}
-
-.button {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #008CBA;
-  padding: 10px 20px;
-  margin: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  border-radius: 15px;
-}
-
-.button2:hover {
-  background-color: #008CBA;
-  color: white;
-}
-
-#number {
-  width:40%;
-  background-color: white; 
-  color: black; 
-  border: 2px solid #008CBA;
-  border-radius: 5px;
-}
-
-#checkbox {
-  width: 20px;
-  height: 20px;
-  border: 2px solid #008CBA;
-}
-
-.title {
-  padding: 20px;
-  font-size: 40px;
-}
-
-#analysis {
- padding: 0px 20px;
- font-size: 20px;
- font-weight: bold;
-}
-
-p {
-  padding: 0px 20px;
-  font-size: 20px;
+.back-gray
+{
+  background-color:   	#DCDCDC;
 }

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 function App() {
   const [zone, setZone] = useState("Zone 1");
-  const [size, setSize] = useState(0);
+  const [size, setSize] = useState(500);
   const [flood, setFlood] = useState(false);
   const [analysis, setAnalysis] = useState("None");
 
@@ -39,48 +39,45 @@ function App() {
 
 
   return (
-    <div id="geeks">
-      <div id="centre">
-        <div class="title">
-          Property Facts
-        </div>
-        <form onSubmit={handleSubmit}>
-          <div id="formcontainer">
-            <div id="leftbox">
-              <label>
-                Zone:
-              </label>
-              <select name="zone" onChange={handleZoneChange} value={zone}>
-                <option value="Zone 1">Zone 1</option>
-                <option value="Zone 2">Zone 2</option>
-                <option value="Zone 3">Zone 3</option>
-              </select>
+    <div class="jumbotron vertical-center back-gray" >
+      <div class="container-sm w-50 bg-light p-5 rounded">
+        <form>
+          <legend>Property facts</legend>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="form-group col-xs-10 col-md-10">
+                <label for="disabledSelect" class="form-label">Zone</label>
+                <select class="form-select" onChange={handleZoneChange}>
+                  <option value="Zone 1">Zone 1</option>
+                  <option value="Zone 2">Zone 2</option>
+                  <option value="Zone 3">Zone 3</option>
+                </select>
+              </div>
             </div>
-            <div id="middlebox">
-              <label>
-                Size:
-              </label>
-              <input
-                id="number"
-                name="size"
-                type="number"
-                onChange={handleSizeChange}
-                value={size} />
+            <div class="col-sm-4">
+              <div class="form-group col-xs-10 col-md-10">
+                <div class="mb-3">
+                  <label for="disabledTextInput" class="form-label">Size</label>
+                  <input type="number" class="form-control" placeholder="sm" onChange={handleSizeChange} />
+                </div>
+              </div>
             </div>
-            <div id="rightbox">
-              <label>
-                Is Flooded?
-              </label>
-              <input id="checkbox"
-                checked={flood}
-                onChange={handleCheckChange}
-                name="iFlooded"
-                type="checkbox" />
+            <div class="col-sm-4">
+              <div class="form-group col-xs-10 col-md-10">
+                <div  class="form-label">Is flooding area?</div>
+                <div class="form-check">
+                  <input class="form-check-input" onChange={handleCheckChange} type="checkbox" value="" id="flexCheckDefault"/>
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Flood area
+                    </label>
+                </div>
+              </div>
             </div>
           </div>
-          <div><input class="button button2" type="submit" value="Submit" /></div>
+          <button type="button" class="btn btn-primary mt-2" onClick={handleSubmit}>Submit</button>
         </form>
-        <div class="title">
+        <hr class="bg-danger border-2 border-top border-secondary"></hr>
+        <div class="h4 mt-4 mb-3">
           Analysis results
         </div>
         <div>
@@ -91,7 +88,6 @@ function App() {
         </div>
       </div>
     </div>
-
   )
 }
 export default App;
