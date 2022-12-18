@@ -4,10 +4,12 @@ import React, { useState } from 'react';
 
 function App() {
   const [zone, setZone] = useState("Zone 1");
-  const [size, setSize] = useState(500);
+  const [size, setSize] = useState(600);
   const [flood, setFlood] = useState(false);
-  const [analysis, setAnalysis] = useState("None");
-
+  const [analysis, setAnalysis] = useState(
+  <ul>
+    <li>Single Dwelling House</li>           
+  </ul>);
 
   const handleZoneChange = (event) => {
     setZone(event.target.value)
@@ -21,16 +23,48 @@ function App() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (flood === false) {
-      setAnalysis("Single Dwelling House");
-      if (zone === "Zone 2" && size >= 500) {
-        setAnalysis("Single Dwelling House, Apartment Complex");
+      if (zone === "Zone 1") {
+        setAnalysis(
+          <ul>
+            <li>Single Dwelling House</li>           
+          </ul>);
       }
-      if (zone === "Zone 3" && size >= 500) {
-        setAnalysis("Single Dwelling House, Apartment Complex");
-        if (zone === "Zone 3" && size >= 1000) {
-          setAnalysis("Single Dwelling House, Apartment Complex, Commercial Building");
+
+      if (zone === "Zone 2") {
+        if (size >= 500) {
+          setAnalysis(
+            <ul>
+              <li>Single Dwelling House</li>
+              <li>Apartment Complex</li>
+            </ul>);
+        }
+        else {
+          setAnalysis(
+            <ul>
+              <li>Single Dwelling House</li>           
+            </ul>);
         }
       }
+
+      if (zone === "Zone 3") {
+        if (size >= 500) {
+          setAnalysis(
+            <ul>             
+              <li>Apartment Complex</li>
+            </ul>);
+          if (size >= 1000) {
+            setAnalysis(
+              <ul>
+                <li>Apartment Complex</li>
+                <li>Commercial Building</li>
+              </ul>);
+          }
+        }
+        else {
+          setAnalysis("None");
+        }
+      }
+
     } else {
       setAnalysis("None");
     }
@@ -39,45 +73,45 @@ function App() {
 
 
   return (
-    <div class="jumbotron vertical-center back-gray" >
-      <div class="container-sm w-50 bg-light p-5 rounded">
+    <div className="jumbotron vertical-center back-gray" >
+      <div className="container-sm w-50 bg-light p-5 rounded">
         <form>
           <legend>Property facts</legend>
-          <div class="row">
-            <div class="col-sm-4">
-              <div class="form-group col-xs-10 col-md-10">
-                <label for="disabledSelect" class="form-label">Zone</label>
-                <select class="form-select" onChange={handleZoneChange}>
+          <div className="row">
+            <div className="col-sm-4">
+              <div className="form-group col-xs-10 col-md-10">
+                <label className="form-label">Zone</label>
+                <select className="form-select" onChange={handleZoneChange} value={zone} >
                   <option value="Zone 1">Zone 1</option>
                   <option value="Zone 2">Zone 2</option>
                   <option value="Zone 3">Zone 3</option>
                 </select>
               </div>
             </div>
-            <div class="col-sm-4">
-              <div class="form-group col-xs-10 col-md-10">
-                <div class="mb-3">
-                  <label for="disabledTextInput" class="form-label">Size</label>
-                  <input type="number" class="form-control" placeholder="Square Meters" onChange={handleSizeChange} />
+            <div className="col-sm-4">
+              <div className="form-group col-xs-10 col-md-10">
+                <div className="mb-3">
+                  <label className="form-label">Size</label>
+                  <input type="number" className="form-control" placeholder="square meters" value={size} onChange={handleSizeChange} />
                 </div>
               </div>
             </div>
-            <div class="col-sm-4">
-              <div class="form-group col-xs-10 col-md-10">
-                <div  class="form-label">Is flooding area?</div>
-                <div class="form-check">
-                  <input class="form-check-input" onChange={handleCheckChange} type="checkbox" value="" id="flexCheckDefault"/>
-                    <label class="form-check-label" for="flexCheckDefault">
-                      Flood area
-                    </label>
+            <div className="col-sm-4">
+              <div className="form-group col-xs-10 col-md-10">
+                <div className="form-label">Is flooding area?</div>
+                <div className="form-check">
+                  <input className="form-check-input" onChange={handleCheckChange} type="checkbox" checked={flood} id="flexCheckDefault" />
+                  <label className="form-check-label" htmlFor="flexCheckDefault">
+                    Flood area
+                  </label>
                 </div>
               </div>
             </div>
           </div>
-          <button type="button" class="btn btn-primary mt-2" onClick={handleSubmit}>Submit</button>
+          <button type="button" className="btn btn-primary mt-2" onClick={handleSubmit}>Submit</button>
         </form>
-        <hr class="bg-danger border-2 border-top border-secondary"></hr>
-        <div class="h4 mt-4 mb-3">
+        <hr className="bg-danger border-2 border-top border-secondary"></hr>
+        <div className="h4 mt-4 mb-3">
           Analysis results
         </div>
         <div>
