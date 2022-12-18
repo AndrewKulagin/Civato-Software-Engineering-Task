@@ -1,7 +1,5 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.css';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
 import React, { useState } from 'react';
 
 function App() {
@@ -46,7 +44,7 @@ function App() {
         <div class="title">
           Property Facts
         </div>
-        <Form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div id="formcontainer">
             <div id="leftbox">
               <label>
@@ -81,7 +79,7 @@ function App() {
             </div>
           </div>
           <div><input class="button button2" type="submit" value="Submit" /></div>
-        </Form>
+        </form>
         <div class="title">
           Analysis results
         </div>
