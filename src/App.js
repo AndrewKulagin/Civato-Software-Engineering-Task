@@ -58,7 +58,7 @@ function App() {
               <div class="form-group col-xs-10 col-md-10">
                 <div class="mb-3">
                   <label for="disabledTextInput" class="form-label">Size</label>
-                  <input type="number" class="form-control" placeholder="sm" onChange={handleSizeChange} />
+                  <input type="number" class="form-control" placeholder="Square Meters" onChange={handleSizeChange} />
                 </div>
               </div>
             </div>
